@@ -17,11 +17,27 @@ void insertarEquipoLista(string,string,int,int);
 void insertarEquipoFichero();
 //void imprimirLista();
 int main(){
+int opc;
+    cout << "  .:MENU:." <<  endl;
+    cout << "1. Ingresar Datos de los equipos." <<endl;
+    cout << "2. Buscar."<<endl;
+    cout << "0. Salir." <<endl;
+    cout << "Opcion: ";
+        cin >> opc;
 
-    insertarEquipoFichero();
-    cout<<endl;
-    //imprimirLista();
-    
+        switch (opc)
+        {
+        case 1:
+               insertarEquipoFichero();
+            break;
+
+        case 2:
+
+            break;
+        default:
+            cout<<"Esa Opcion no existe";
+            break;
+        }
     return 0;
 }
 
@@ -57,16 +73,19 @@ void insertarEquipoLista(string Equipo,string Conferencia,int Victorias,int Derr
         nuevoNodo->derrotas = Derrotas;
         nuevoNodo->sig = NULL;
         nuevoNodo->ant = NULL;
-        if (lista == NULL){
+        if (lista == NULL)
+        {
             lista = nuevoNodo;
         }
-        else{
+        else
+        {
             nuevoNodo->sig = lista;
             lista->ant = nuevoNodo;
             lista = nuevoNodo;
         }
     }
-    else{
+    else
+    {
         cout<<"No se puden agregar mas equipos.";
     }
 }
