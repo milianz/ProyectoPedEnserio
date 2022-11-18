@@ -53,10 +53,3 @@ void EliminarEquipo()
     //Renombrar el registr temporal para convertirlo en el nuevo archivo de texto "original".
     rename("RegistroTemporal.txt", "RegistroEquipos.txt");
 }
-
-int main()
-{
-    EliminarEquipo();
-
-    return 0;
-}
