@@ -1,1 +1,3 @@
-sexo		32		1878000590		12.
+sexo		32		18		12.
+Laker		34		23		Este.
+Fenix		38		12		Oeste.

@@ -12,8 +12,8 @@ int opc;
     cout << "0. Salir." <<endl;
     cout << "Opcion: ";
         cin >> opc;
-
-        switch (opc)
+do{ 
+    switch (opc)
         {
         case 1:
             insertarEquipoFichero();
@@ -25,6 +25,9 @@ int opc;
         default:
             cout<<"Esa Opcion no existe";
             break;
+
         }
+    }while(opc!=0);
+        
     return 0;
 }
