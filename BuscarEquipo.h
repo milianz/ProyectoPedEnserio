@@ -50,7 +50,8 @@ void BuscarEquipo()
     //Si el equipo no ha sido encontrado...
     if(!equipoEncontrado)
     {
-        cout << "El Equipo " << nombreBuscar << " no ha sido encontrado." << endl;
+        system("cls");
+        cout << "El Equipo " << "["<<nombreBuscar<<"]" << " no ha sido encontrado." << endl;
     }
 
 }
