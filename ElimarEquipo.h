@@ -18,7 +18,8 @@ void EliminarEquipo()
     //Declaracion de variables normales.
     int win, lose;
     string equipo, equipoEliminar, conferencia;
-
+    //Limpiar el buffer.
+    fflush(stdin);
     cout << "Ingrese el equipo que desea eliminar: ";
     getline(cin, equipoEliminar);
 
@@ -37,7 +38,7 @@ void EliminarEquipo()
         else
         {
             //Pasar toda la informacion al fichero temporal sin el registro encontrado.
-            archivoTemporal << equipo << "\t\t" <<win<< "\t\t" << lose << "\t\t " << conferencia << "."<<endl;
+            archivoTemporal << equipo << "\t\t" <<win<< "\t\t" << lose << "\t\t " << conferencia <<endl;
         }
 
         archivo >> equipo;

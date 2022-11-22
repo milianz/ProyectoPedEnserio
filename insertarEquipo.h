@@ -14,7 +14,25 @@ struct Nodo{
 struct Nodo *lista=NULL;
 void insertarEquipoFichero();
 void insertarEquipoLista(string, string, int, int);
+bool verificar(string equipo);
 
+bool verificar(string equipo){
+    ifstream leer("RegistroEquipos.txt",ios::in);
+    string  Equipo, Conferencia;
+    int Victorias, Derrotas;
+    leer>>Equipo;
+    while(!leer.eof()){
+        leer>>Victorias;
+        leer>>Derrotas;
+        leer>>Conferencia;
+         if(Equipo == equipo){
+            return false;
+            }
+        leer>>Equipo;
+    }
+  leer.close();
+  return true;
+}
 
 void insertarEquipoFichero()
 {
@@ -29,19 +47,24 @@ void insertarEquipoFichero()
 
     cout<<"Ingrese el nombre del equipo: ";
     getline(cin,Equipo);
-
+    if(verificar(Equipo));
+    fflush(stdin);
+    cout<<"Ingrese El Numero De Victorias: ";
+    cin>>Victorias;
+    fflush(stdin);
+    cout<<"Ingrese La El Numero de Derrrotas: ";
+    cin>>Derrotas;
+    fflush(stdin);
     cout<<"Ingrese La conferencia del equipo: ";
     getline(cin,Conferencia);
 
-    cout<<"Ingrese El Numero De Victorias: ";
-    cin>>Victorias;
+   
 
-    cout<<"Ingrese La El Numero de Derrrotas: ";
-    cin>>Derrotas;
+    
 
     insertarEquipoLista(Equipo,Conferencia,Victorias,Derrotas);
 
-    DBEquipos<<Equipo<<"\t\t"<<Victorias<<"\t\t"<<Derrotas<<"\t\t"<<Conferencia<<"."<<endl;
+    DBEquipos<<Equipo<<"\t\t"<<Victorias<<"\t\t"<<Derrotas<<"\t\t"<<Conferencia<<endl;
     DBEquipos.close();
 
 }
